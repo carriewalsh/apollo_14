@@ -33,4 +33,10 @@ describe Astronaut, type: :model do
       expect(Astronaut.average_age).to eq(33)
     end
   end
+
+  describe ".ordered_missions" do
+    it "should show missions for an astronaut in alpha order" do
+      expect(Astronaut.ordered_missions(@astro1)).to eq (["Apollo 2", "Apollo 4"])
+    end
+  end
 end
