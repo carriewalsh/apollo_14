@@ -19,6 +19,7 @@ RSpec.describe "astronauts page", type: :feature do
 
   describe "as a visitor to the astronauts page" do
     it "shows a list of astronauts with information" do
+      visit astronauts_path
       # binding.pry
       expect(page).to have_content("Name: Astronaut 1")
       expect(page).to have_content("Age: 34")
