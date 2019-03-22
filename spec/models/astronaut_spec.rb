@@ -29,6 +29,8 @@ describe Astronaut, type: :model do
   end
 
   describe ".average_age" do
-    expect(Astronaut.average_age).to eq(33)
+    it "should calculate the average age" do
+      expect(Astronaut.average_age).to eq(33)
+    end
   end
 end
