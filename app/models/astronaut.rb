@@ -7,4 +7,8 @@ class Astronaut < ApplicationRecord
   def self.average_age
     average(:age)
   end
+
+  def self.ordered_missions(astronaut)
+    Astronaut.find(astronaut.id).missions.name.sort
+  end
 end

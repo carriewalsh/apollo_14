@@ -31,6 +31,15 @@ RSpec.describe "astronauts page", type: :feature do
       visit astronauts_path
       expect(page).to have_content("Average age of astronauts: 33")
     end
+
+    it "shows the missions for each astronaut in alpha order" do
+      visit astronauts_path
+      within first ".astronaut-card" do
+        expect(page).to have_content("Apollo 2")
+        expect(page).to have_content("Apollo 4")
+        expect(page).to have_no_content("Apollo 3")
+      end
+    end
   end
 
 
