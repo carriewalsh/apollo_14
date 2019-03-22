@@ -25,8 +25,14 @@ RSpec.describe "astronauts page", type: :feature do
       expect(page).to have_content("Age: 34")
       expect(page).to have_content("Job: pilot")
       expect(page).to have_css(".astronaut-card", count: 6)
+    end
 
+    it "shows the average age of astronauts" do
+      visit astronauts_path
+      expect(page).to have_content("Average age of astronauts: 33")
     end
   end
+
+
 
 end
